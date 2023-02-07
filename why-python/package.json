@@ -1,0 +1,47 @@
+{
+  "name": "why-python",
+  "version": "1.0.0",
+  "description": "Why learning Python?",
+  "main": "index.js",
+  "scripts": {
+    "build": "mdx-deck build src/deck.mdx",
+    "copy:static": "cp -r src/img dist",
+    "help": "mdx-deck",
+    "image": "mdx-deck screenshot src/deck.mdx",
+    "lint:staged": "lint-staged",
+    "pdf": "mdx-deck pdf src/deck.mdx",
+    "prettier": "prettier --write --single-quote true --trailing-comma all --print-width 100",
+    "publish:deck": "yarn build --no-html src/deck.mdx && yarn copy:static && gh-pages -d dist",
+    "start": "mdx-deck src/deck.mdx"
+  },
+  "keywords": [
+    "ddc-brokeer",
+    "data-science",
+    "ETL",
+    "pdf-processing",
+    "python",
+    "modeling"
+  ],
+  "author": "Aluisio Amorim (aluamorim@usp.br)",
+  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "yarn prettier",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@code-surfer/themes": "^3.1.1",
+    "code-surfer": "^3.0.0-beta.1",
+    "gh-pages": "^4.0.0",
+    "lint-staged": "^13.1.0",
+    "mdx-code": "^2.0.0",
+    "mdx-deck": "^4.1.1",
+    "mdx-deck-live-code": "^1.0.1",
+    "prettier": "^2.8.1",
+    "raw-loader": "^4.0.2"
+  },
+  "dependencies": {
+    "styled-components": "^5.3.6"
+  }
+}
